@@ -15,6 +15,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      newTask: "",
       tasks: [
         {
           name: "Fare la spesa",
@@ -53,6 +54,14 @@ const app = createApp({
   methods: {
     removeTask(target) {
       this.tasks = this.tasks.filter((task) => target !== task.id);
+    },
+    addTask() {
+      this.tasks.push({
+        name: this.newTask,
+        done: false,
+        id: 1,
+      });
+      this.newTask = "";
     },
   },
 });
