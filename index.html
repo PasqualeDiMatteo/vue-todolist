@@ -27,9 +27,14 @@
         <div class="container">
             <!-- Title -->
             <h1 class="my-5 text-center">To Do List</h1>
+            <!-- Search -->
+            <div class="my-5">
+                <input type="text" v-model="searchedTask" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Cerca...">
+            </div>
             <!-- List -->
             <ul class="list-group">
-                <label v-for="task in tasks">
+                <label v-for="task in  filteredTasks">
                     <li class="list-group-item d-flex justify-content-between .align-items-center"
                         :class="{'text-decoration-line-through':task.done}">
                         <input type="checkbox" v-model="task.done">

@@ -18,6 +18,8 @@ const app = createApp({
     return {
       // New Task
       newTask: "",
+      // Search Task
+      searchedTask: "",
       // Tasks
       tasks: [
         {
@@ -54,7 +56,13 @@ const app = createApp({
     };
   },
   // Computed
-  computed: {},
+  computed: {
+    // Filtered Tasks
+    filteredTasks() {
+      const term = this.searchedTask.toLowerCase();
+      return this.tasks.filter(({ name }) => name.toLowerCase().includes(term));
+    },
+  },
   // Methods
   methods: {
     // Remove Task
