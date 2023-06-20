@@ -14,7 +14,34 @@ const { createApp } = Vue;
 
 const app = createApp({
   data() {
-    return {};
+    return {
+      tasks: [
+        {
+          name: "Fare la spesa",
+          done: true,
+        },
+        {
+          name: "Fare esercizio fisico per 30 minuti",
+          done: false,
+        },
+        {
+          name: "Leggere almeno 1 capitolo di un libro",
+          done: false,
+        },
+        {
+          name: "Pulire e mettere in ordine la camera da letto",
+          done: false,
+        },
+        {
+          name: "Scrivere una email importante",
+          done: false,
+        },
+        {
+          name: "Fare il bucato e stirare i vestiti",
+          done: false,
+        },
+      ],
+    };
   },
 });
 
