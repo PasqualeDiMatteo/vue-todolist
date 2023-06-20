@@ -13,9 +13,12 @@ const { createApp } = Vue;
 // Inizializzo l'app Vue
 
 const app = createApp({
+  // Data
   data() {
     return {
+      // New Task
       newTask: "",
+      // Tasks
       tasks: [
         {
           name: "Fare la spesa",
@@ -50,11 +53,15 @@ const app = createApp({
       ],
     };
   },
+  // Computed
   computed: {},
+  // Methods
   methods: {
+    // Remove Task
     removeTask(target) {
       this.tasks = this.tasks.filter((task) => target !== task.id);
     },
+    // Add Task
     addTask() {
       this.tasks.push({
         name: this.newTask,
