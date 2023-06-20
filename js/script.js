@@ -18,30 +18,42 @@ const app = createApp({
       tasks: [
         {
           name: "Fare la spesa",
-          done: true,
+          done: false,
+          id: 20,
         },
         {
           name: "Fare esercizio fisico per 30 minuti",
           done: false,
+          id: 73,
         },
         {
           name: "Leggere almeno 1 capitolo di un libro",
           done: false,
+          id: 51,
         },
         {
           name: "Pulire e mettere in ordine la camera da letto",
           done: false,
+          id: 99,
         },
         {
           name: "Scrivere una email importante",
           done: false,
+          id: 16,
         },
         {
           name: "Fare il bucato e stirare i vestiti",
           done: false,
+          id: 48,
         },
       ],
     };
+  },
+  computed: {},
+  methods: {
+    removeTask(target) {
+      this.tasks = this.tasks.filter((task) => target !== task.id);
+    },
   },
 });
 
